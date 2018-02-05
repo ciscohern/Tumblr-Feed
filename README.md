@@ -1,14 +1,14 @@
 # Lab 1 - *Tumblr Feed*
 
-**Name of your app** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
+**Tumblr Feed* is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
 The following **required** user stories are complete:
 
-- [ ] User can scroll through a feed of images returned from the Tumblr API (5pts)
+- [x ] User can scroll through a feed of images returned from the Tumblr API (5pts)
 
 The following **optional** user stories are implemented:
 
@@ -23,14 +23,14 @@ The following **additional** user stories are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. What exactly does "tableView.delegate = self" mean?
+2. Why is the tableView function overloaded?
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/97UmP2j.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -38,9 +38,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+-- For the longest time, I couldn't figure out why the pictures didn't show up with the right size for the UIImageView. Then I finally figured out that a function was needed to set the height of the picture.
+
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2018 Nicole Hipolito
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
