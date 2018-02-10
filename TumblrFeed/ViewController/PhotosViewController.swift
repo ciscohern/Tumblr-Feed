@@ -32,7 +32,35 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destinationViewController = segue.destination as! PhotoDetailsViewController
+        
+        //initializing the cell object to a UITableViewCell type
+        let cell = sender as! UITableViewCell
+        //grabbing the current index we're at in the UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let post = self.posts[indexPath.row]
+       
+        if let photos = post["photos"] as? [[String: Any]] {
+            
+            // Getting the photo url
+            // 1.
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString = originalSize["url"] as! String
+            // 4.
+            let url = URL(string: urlString)
+            
+            destinationViewController.url = url;
+            
+        }
+//        destinationViewController.image = cell.photoImageView.image
+    }
+    
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         fetchPics()
     }
@@ -52,9 +80,9 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 let responseDictionary = dataDictionary["response"] as! [String: Any]
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
                 self.tableView.reloadData()
-                self.refreshControl.endRefreshing()
 //                print(dataDictionary)
             }
+             self.refreshControl.endRefreshing()
         }
         task.resume()
     }
@@ -66,6 +94,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -90,9 +122,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
             // 4.
             let url = URL(string: urlString)
             cell.photoImageView.af_setImage(withURL: url!)
-
+            
         }
-//        cell.textLabel?.text = "This is row \(indexPath.row)"
         
         return cell
     }
