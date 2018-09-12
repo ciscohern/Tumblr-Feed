@@ -2,9 +2,10 @@
 //  TumblrFeedTests.swift
 //  TumblrFeedTests
 //
-//  Created by Nicole Hipolito on 1/31/18.
-//  Copyright © 2018 Nicole Hipolito. All rights reserved.
+//  Created by Francisco Hernanedez on 9/7/18.
+//  Copyright © 2018 Francisco Hernanedz. All rights reserved.
 //
+
 
 import XCTest
 @testable import TumblrFeed

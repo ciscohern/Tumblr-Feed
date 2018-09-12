@@ -2,8 +2,8 @@
 //  PhotoDetailsViewController.swift
 //  TumblrFeed
 //
-//  Created by Nicole Hipolito on 2/9/18.
-//  Copyright © 2018 Nicole Hipolito. All rights reserved.
+//  Created by Francisco Hernanedez on 9/7/18.
+//  Copyright © 2018 Francisco Hernanedz. All rights reserved.
 //
 
 import UIKit

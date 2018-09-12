@@ -6,7 +6,7 @@ target 'TumblrFeed' do
 
   # Pods for TumblrFeed
   # This pulls in the latest version of Alamofire >= 4.4 but less than 5.0.
-  pod 'Alamofire', '~> 4.4'
+  pod 'Alamofire', '~> 4.7'
   # Add additional dependencies
   pod 'OAuthSwift', '~> 1.2.0'
   pod 'OAuthSwiftAlamofire'
