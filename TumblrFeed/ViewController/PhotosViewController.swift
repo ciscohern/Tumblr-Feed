@@ -11,6 +11,8 @@ import AlamofireImage
 
 class PhotosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
+    
+    
     var posts: [[String: Any]] = []
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +21,8 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.separatorInset = UIEdgeInsets.zero
 
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PhotosViewController.didPullToRefresh(_:)), for: .valueChanged)

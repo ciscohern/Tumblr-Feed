@@ -10,11 +10,16 @@
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
+    
+    
     @IBOutlet weak var photoImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.layoutMargins = UIEdgeInsets.zero
+        self.preservesSuperviewLayoutMargins = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

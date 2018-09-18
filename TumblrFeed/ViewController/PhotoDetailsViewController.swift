@@ -9,6 +9,8 @@
 import UIKit
 
 class PhotoDetailsViewController: UIViewController {
+    
+    
 
     @IBOutlet weak var PDImageView: UIImageView!
     var url = URL(string: "")
